@@ -15,6 +15,7 @@ class SearchIcon extends StatelessWidget {
           color: Colors.white.withOpacity(.08),
         ),
         child: IconButton(
+            hoverColor: Colors.white,
             onPressed: () {},
             icon: const Icon(
               Icons.search,
