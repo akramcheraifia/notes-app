@@ -44,7 +44,7 @@ class NotesItem extends StatelessWidget {
                 size: 30,
               )),
         ),
-        SizedBox(
+        const SizedBox(
           height: 16,
         ),
         Padding(
