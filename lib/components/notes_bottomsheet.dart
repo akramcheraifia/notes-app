@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
+import 'custom_button.dart';
 import 'custom_textfield.dart';
 
 class NotesModalSheet extends StatelessWidget {
@@ -23,17 +24,12 @@ class NotesModalSheet extends StatelessWidget {
               ),
               CustomTextField(
                 maxLines: 6,
-                labelText: 'Content',
+                labelText: 'Note',
               ),
-              TextButton(
-                style: const ButtonStyle(
-                    shape: MaterialStatePropertyAll(OvalBorder())),
-                onPressed: () {},
-                child: const Text(
-                  "Add",
-                  style: TextStyle(color: kPrimaryColor),
-                ),
+              const SizedBox(
+                height: 20,
               ),
+              CustomButton(buttonName: "Add"),
             ],
           ),
         ),
