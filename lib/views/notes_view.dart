@@ -27,7 +27,7 @@ class NotesView extends StatelessWidget {
               context: context,
               isScrollControlled: true,
               builder: (context) {
-                return const NotesModalSheet();
+                return NotesModalSheet();
               });
         },
         child: const Icon(Icons.add),

@@ -26,6 +26,7 @@ class EditNoteBody extends StatelessWidget {
         ),
         CustomButton(
           buttonName: "Save",
+          onPressed: () {},
         ),
       ],
     );

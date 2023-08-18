@@ -3,7 +3,8 @@ import 'package:notes_app/constants.dart';
 
 class CustomButton extends StatelessWidget {
   String buttonName;
-  CustomButton({super.key, required this.buttonName});
+  void Function()? onPressed;
+  CustomButton({super.key, required this.buttonName, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class CustomButton extends StatelessWidget {
           fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
           backgroundColor: kPrimaryColor,
           foregroundColor: Colors.black),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
         buttonName,
         style: const TextStyle(color: Colors.black),
