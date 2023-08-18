@@ -1,19 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../views/edit_notes_view.dart';
 
 class NotesItem extends StatelessWidget {
-  const NotesItem({
-    super.key,
-  });
+  NotesItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return EditNotes();
+          return const EditNotes();
         }));
       },
       child: Container(
@@ -23,12 +20,13 @@ class NotesItem extends StatelessWidget {
           left: 16,
         ),
         decoration: BoxDecoration(
-            color: Colors.amber, borderRadius: BorderRadius.circular(16)),
+            color: const Color(0xff29B5FF),
+            borderRadius: BorderRadius.circular(16)),
         child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
           ListTile(
-            title: const Text(
-              "Flutter Tips",
-              style: TextStyle(
+            title: Text(
+              "hello world",
+              style: const TextStyle(
                 color: Colors.black,
                 fontSize: 25,
               ),
@@ -38,7 +36,7 @@ class NotesItem extends StatelessWidget {
                 top: 16,
                 bottom: 16,
               ),
-              child: Text('Build your carrer with akram cheraifia',
+              child: Text("hello world",
                   style: TextStyle(
                     color: Colors.black.withOpacity(.55),
                     fontSize: 15,
@@ -47,8 +45,8 @@ class NotesItem extends StatelessWidget {
             trailing: IconButton(
                 onPressed: () {},
                 icon: const Icon(
-                  Icons.delete,
-                  color: Colors.black,
+                  Icons.delete_outlined,
+                  color: Color.fromARGB(255, 177, 32, 22),
                   size: 30,
                 )),
           ),

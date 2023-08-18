@@ -6,18 +6,20 @@ import '../components/notes_bottomsheet.dart';
 import '../widgets/notes_app_bar.dart';
 
 class NotesView extends StatelessWidget {
-  const NotesView({super.key});
-
+  NotesView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: kPrimaryColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(20),
         ),
         onPressed: () {
           showModalBottomSheet(
+              enableDrag: true,
+              showDragHandle: true,
+              backgroundColor: kSecondartyColor,
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(16),
@@ -25,7 +27,7 @@ class NotesView extends StatelessWidget {
               context: context,
               isScrollControlled: true,
               builder: (context) {
-                return NotesModalSheet();
+                return const NotesModalSheet();
               });
         },
         child: const Icon(Icons.add),
@@ -44,7 +46,8 @@ class NotesView extends StatelessWidget {
             ),
             CustomAppBar(
               appBarName: "Notes",
-              icon: Icons.search,
+              suffixIcon: Icons.search,
+              suffixOnTap: () {},
             ),
             const SizedBox(
               height: 10,

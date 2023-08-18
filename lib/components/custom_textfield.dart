@@ -5,7 +5,8 @@ import '../constants.dart';
 class CustomTextField extends StatelessWidget {
   int? maxLines;
   String labelText;
-  CustomTextField({@required this.maxLines, required this.labelText});
+  CustomTextField(
+      {super.key, @required this.maxLines, required this.labelText});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +15,15 @@ class CustomTextField extends StatelessWidget {
       cursorColor: kPrimaryColor,
       maxLines: maxLines ?? 1,
       decoration: InputDecoration(
+        filled: true,
+        fillColor: const Color(0xff374674),
+        focusColor: kLightGreyColor,
+        // hoverColor: Color(0xff374674),
         labelText: labelText,
-        labelStyle: const TextStyle(color: kPrimaryColor),
+        labelStyle: const TextStyle(color: kLightGreyColor),
         border: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: Colors.white,
+            color: kSecondartyColor,
           ),
           borderRadius: BorderRadius.circular(
             16,
@@ -26,7 +31,7 @@ class CustomTextField extends StatelessWidget {
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: Colors.white,
+            color: kSecondartyColor,
           ),
           borderRadius: BorderRadius.circular(
             16,
@@ -34,7 +39,7 @@ class CustomTextField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: kPrimaryColor,
+            color: kSecondartyColor,
           ),
           borderRadius: BorderRadius.circular(
             16,

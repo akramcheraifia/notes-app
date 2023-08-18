@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/constants.dart';
 
 import 'custom_button.dart';
 import 'custom_textfield.dart';
 
 class NotesModalSheet extends StatelessWidget {
-  NotesModalSheet({super.key});
+  const NotesModalSheet({super.key});
 
   @override
   Widget build(BuildContext context) {

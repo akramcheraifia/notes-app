@@ -4,7 +4,8 @@ import 'package:notes_app/widgets/edit_note.dart';
 import '../widgets/notes_app_bar.dart';
 
 class EditNotes extends StatelessWidget {
-  EditNotes({super.key});
+  const EditNotes({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +24,10 @@ class EditNotes extends StatelessWidget {
               ),
               CustomAppBar(
                 appBarName: "Edit Note",
-                icon: Icons.delete,
+                suffixIcon: Icons.cancel_outlined,
+                suffixOnTap: () {
+                  Navigator.pop(context);
+                },
               ),
               const SizedBox(
                 height: 10,
