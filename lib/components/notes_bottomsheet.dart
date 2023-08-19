@@ -33,8 +33,8 @@ class _NotesModalSheetState extends State<NotesModalSheet> {
           }
         },
         builder: (context, state) {
-          return ModalProgressHUD(
-            inAsyncCall: state is AddNoteLoading ? true : false,
+          return AbsorbPointer(
+            absorbing: state is AddNoteLoading ? true : false,
             child: Form(
               key: formKey,
               child: Padding(
@@ -65,21 +65,26 @@ class _NotesModalSheetState extends State<NotesModalSheet> {
                         const SizedBox(
                           height: 20,
                         ),
-                        CustomButton(
-                          buttonName: "Add",
-                          onPressed: () {
-                            if (formKey.currentState!.validate()) {
-                              formKey.currentState!.save();
-                              BlocProvider.of<AddNoteCubit>(context).addNote(
-                                  NotesModel(
-                                      title: title!,
-                                      subTitle: subTitle!,
-                                      date: DateTime.now().toString(),
-                                      color: Colors.blue.value));
-                            } else {
-                              autovalidateMode = AutovalidateMode.always;
-                              setState(() {});
-                            }
+                        BlocBuilder<AddNoteCubit, AddNoteState>(
+                          builder: (context, state) {
+                            return CustomButton(
+                              isLoading: state is AddNoteLoading ? true : false,
+                              buttonName: "Add",
+                              onPressed: () {
+                                if (formKey.currentState!.validate()) {
+                                  formKey.currentState!.save();
+                                  BlocProvider.of<AddNoteCubit>(context)
+                                      .addNote(NotesModel(
+                                          title: title!,
+                                          subTitle: subTitle!,
+                                          date: DateTime.now().toString(),
+                                          color: Colors.blue.value));
+                                } else {
+                                  autovalidateMode = AutovalidateMode.always;
+                                  setState(() {});
+                                }
+                              },
+                            );
                           },
                         ),
                       ],
