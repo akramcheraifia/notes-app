@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/models/notes_model.dart';
@@ -77,7 +78,8 @@ class _NotesModalSheetState extends State<NotesModalSheet> {
                                       .addNote(NotesModel(
                                           title: title!,
                                           subTitle: subTitle!,
-                                          date: DateTime.now().toString(),
+                                          date: DateFormat.yMd()
+                                              .format(DateTime.now()),
                                           color: Colors.blue.value));
                                 } else {
                                   autovalidateMode = AutovalidateMode.always;
