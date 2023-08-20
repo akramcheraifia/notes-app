@@ -22,10 +22,10 @@ class CustomButton extends StatelessWidget {
             foregroundColor: Colors.black),
         onPressed: onPressed,
         child: isLoading
-            ? SizedBox(
+            ? const SizedBox(
                 height: 24,
                 width: 24,
-                child: const CircularProgressIndicator(
+                child: CircularProgressIndicator(
                   strokeWidth: 3,
                   color: Colors.black,
                 ),
