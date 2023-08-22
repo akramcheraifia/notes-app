@@ -5,16 +5,22 @@ import '../constants.dart';
 class CustomTextField extends StatelessWidget {
   int? maxLines;
   String labelText;
+  void Function(String)? onChanged;
   void Function(String?)? onSaved;
+  String? initialValue;
   CustomTextField(
       {super.key,
       @required this.maxLines,
       required this.labelText,
+      this.onChanged,
+      this.initialValue,
       @required this.onSaved});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initialValue,
+      onChanged: onChanged,
       onSaved: onSaved,
       validator: (value) {
         if (value?.isEmpty ?? true) {

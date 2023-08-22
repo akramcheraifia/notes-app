@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/notes_model.dart';
 import 'package:notes_app/widgets/edit_note.dart';
 
 import '../widgets/notes_app_bar.dart';
 
 class EditNotes extends StatelessWidget {
-  const EditNotes({super.key});
+  final NotesModel note;
+  const EditNotes({super.key, required this.note});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class EditNotes extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const EditNoteBody(),
+              EditNoteBody(note: note),
             ],
           ),
         ),

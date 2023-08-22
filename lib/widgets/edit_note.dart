@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/components/custom_button.dart';
+import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 
 import '../components/custom_textfield.dart';
+import '../models/notes_model.dart';
 
-class EditNoteBody extends StatelessWidget {
-  const EditNoteBody({super.key});
+class EditNoteBody extends StatefulWidget {
+  final NotesModel note;
+  const EditNoteBody({super.key, required this.note});
 
+  @override
+  State<EditNoteBody> createState() => _EditNoteBodyState();
+}
+
+class _EditNoteBodyState extends State<EditNoteBody> {
+  String? title, subTitle;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -13,12 +23,22 @@ class EditNoteBody extends StatelessWidget {
         const SizedBox(
           height: 30,
         ),
-        CustomTextField(labelText: "Title"),
+        CustomTextField(
+          labelText: "Title",
+          initialValue: widget.note.title,
+          onChanged: (value) {
+            title = value;
+          },
+        ),
         const SizedBox(
           height: 20,
         ),
         CustomTextField(
-          labelText: "Note",
+          initialValue: widget.note.subTitle,
+          onChanged: (value) {
+            subTitle = value;
+          },
+          labelText: "Content",
           maxLines: 6,
         ),
         const SizedBox(
@@ -26,7 +46,13 @@ class EditNoteBody extends StatelessWidget {
         ),
         CustomButton(
           buttonName: "Save",
-          onPressed: () {},
+          onPressed: () {
+            widget.note.title = title ?? widget.note.title;
+            widget.note.subTitle = subTitle ?? widget.note.subTitle;
+            widget.note.save();
+            BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+            Navigator.pop(context);
+          },
         ),
       ],
     );
