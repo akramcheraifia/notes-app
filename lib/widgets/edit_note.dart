@@ -8,6 +8,7 @@ import '../models/notes_model.dart';
 
 class EditNoteBody extends StatefulWidget {
   final NotesModel note;
+
   const EditNoteBody({super.key, required this.note});
 
   @override
@@ -15,7 +16,8 @@ class EditNoteBody extends StatefulWidget {
 }
 
 class _EditNoteBodyState extends State<EditNoteBody> {
-  String? title, subTitle;
+  late String title, subTitle;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,7 +29,11 @@ class _EditNoteBodyState extends State<EditNoteBody> {
           labelText: "Title",
           initialValue: widget.note.title,
           onChanged: (value) {
-            title = value;
+            if (value.isEmpty) {
+              title = widget.note.title;
+            } else {
+              title = value;
+            }
           },
         ),
         const SizedBox(
@@ -36,7 +42,11 @@ class _EditNoteBodyState extends State<EditNoteBody> {
         CustomTextField(
           initialValue: widget.note.subTitle,
           onChanged: (value) {
-            subTitle = value;
+            if (value.isEmpty) {
+              subTitle = widget.note.subTitle;
+            } else {
+              subTitle = value;
+            }
           },
           labelText: "Content",
           maxLines: 6,
@@ -47,8 +57,8 @@ class _EditNoteBodyState extends State<EditNoteBody> {
         CustomButton(
           buttonName: "Save",
           onPressed: () {
-            widget.note.title = title ?? widget.note.title;
-            widget.note.subTitle = subTitle ?? widget.note.subTitle;
+            widget.note.title = title;
+            widget.note.subTitle = subTitle;
             widget.note.save();
             BlocProvider.of<NotesCubit>(context).fetchAllNotes();
             Navigator.pop(context);

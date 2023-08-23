@@ -4,6 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notes_app/models/notes_model.dart';
 import 'package:notes_app/simple_bloc_observer.dart';
 import 'package:notes_app/views/notes_view.dart';
+import 'constants.dart';
 import 'cubits/notes_cubit/notes_cubit.dart';
 
 void main() async {
@@ -29,7 +30,7 @@ class NoteApp extends StatelessWidget {
           scaffoldBackgroundColor: const Color(0xff1A2031),
           fontFamily: 'Poppins',
         ),
-        home: NotesView(),
+        home: const NotesView(),
       ),
     );
   }

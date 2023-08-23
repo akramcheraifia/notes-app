@@ -5,6 +5,7 @@ import '../constants.dart';
 class CustomTextField extends StatelessWidget {
   int? maxLines;
   String labelText;
+  TextEditingController? controller;
   void Function(String)? onChanged;
   void Function(String?)? onSaved;
   String? initialValue;

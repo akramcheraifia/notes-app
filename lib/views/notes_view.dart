@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/constants.dart';
 import 'package:notes_app/widgets/notes_body.dart';
 import '../components/notes_bottomsheet.dart';
 import '../widgets/notes_app_bar.dart';
 
 class NotesView extends StatelessWidget {
-  NotesView({super.key});
+  const NotesView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +26,7 @@ class NotesView extends StatelessWidget {
               context: context,
               isScrollControlled: true,
               builder: (context) {
-                return NotesModalSheet();
+                return const NotesModalSheet();
               });
         },
         child: const Icon(Icons.add),
