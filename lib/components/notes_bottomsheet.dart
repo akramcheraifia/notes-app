@@ -105,7 +105,7 @@ class _NotesModalSheetState extends State<NotesModalSheet> {
                                           subTitle: subTitle!,
                                           date: DateFormat.yMd()
                                               .format(DateTime.now()),
-                                          color: Colors.blue.value));
+                                          color: dialogPickerColor.value));
                                 } else {
                                   autovalidateMode = AutovalidateMode.always;
                                   setState(() {});
@@ -153,7 +153,7 @@ class _NotesModalSheetState extends State<NotesModalSheet> {
       ),
       showMaterialName: true,
       showColorName: true,
-      showColorCode: true,
+      showColorCode: false,
       copyPasteBehavior: const ColorPickerCopyPasteBehavior(
         longPressMenu: true,
       ),
