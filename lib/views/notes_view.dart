@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
+import 'package:notes_app/models/notes_model.dart';
 import 'package:notes_app/widgets/notes_body.dart';
+import '../components/custom_search.dart';
 import '../components/notes_bottomsheet.dart';
 import '../widgets/notes_app_bar.dart';
 
@@ -46,7 +48,11 @@ class NotesView extends StatelessWidget {
             CustomAppBar(
               appBarName: "Notes",
               suffixIcon: Icons.search,
-              suffixOnTap: () {},
+              suffixOnTap: () {
+                showSearch(
+                    context: context,
+                    delegate: CustomSearchHintDelegate(hintText: "Search"));
+              },
             ),
             const SizedBox(
               height: 10,

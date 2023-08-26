@@ -25,7 +25,7 @@ class CustomTextField extends StatelessWidget {
       onSaved: onSaved,
       validator: (value) {
         if (value?.isEmpty ?? true) {
-          return "ivalid data";
+          return "Invalid data";
         } else {
           return null;
         }
