@@ -25,7 +25,7 @@ Create, organize, and manage your digital sticky notes with ease . This app allo
 
 ## Screenshots 📸
 
-![App Screenshot 1](/repository/screenshot1.jpg?raw=true "Screenshot 1")
+![App Screenshot 1](https://github.com/akramcheraifia/notes-app.git/screenshot1.jpg?raw=true "Screenshot 1")
 ![App Screenshot 2](/repository/screenshot2.jpg?raw=true "Screenshot 2")
 ![App Screenshot 3](/repository/screenshot3.jpg?raw=true "Screenshot 3")
 ![App Screenshot 4](/repository/screenshot4.jpg?raw=true "Screenshot 4")
