@@ -25,14 +25,15 @@ Create, organize, and manage your digital sticky notes with ease . This app allo
 
 ## Screenshots 📸
 
-![App Screenshot 1](screenshot1.png)
-![App Screenshot 2](screenshot2.png)
-![App Screenshot 3](screenshot3.png)
+![App Screenshot 1](/repository/screenshot1.jpg?raw=true "Screenshot 1")
+![App Screenshot 2](/repository/screenshot2.jpg?raw=true "Screenshot 2")
+![App Screenshot 3](/repository/screenshot3.jpg?raw=true "Screenshot 3")
+![App Screenshot 4](/repository/screenshot4.jpg?raw=true "Screenshot 4")
 
 ## Getting Started 👨‍💻
 
-1. Clone the repository: `git clone https://github.com/yourusername/flutter-sticky-notes.git`
-2. Navigate to the project directory: `cd flutter-sticky-notes`
+1. Clone the repository: `https://github.com/akramcheraifia/notes-app.git`
+2. Navigate to the project directory: `cd notes-app`
 3. Install dependencies: `flutter pub get`
 4. Run the app: `flutter run`
 
